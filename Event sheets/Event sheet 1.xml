@@ -104,5 +104,41 @@
                 <action id="-26" name="Restart layout" type="System" />
             </actions>
         </event-block>
+        <event-block>
+            <conditions>
+                <condition id="-6" name="Every X seconds" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" type="Shroom">
+                    <param id="0" name="Instance variable">Time</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" type="Shroom">
+                    <param id="0" name="Instance variable">Mod</param>
+                    <param id="1" name="Value">Shroom.Time % 5</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block>
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" type="Shroom">
+                            <param id="0" name="Instance variable">Mod</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" type="System">
+                            <param id="0" name="Object to create">Shroom</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">650 + random(250) - random(250)</param>
+                            <param id="3" name="Y">656</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>
